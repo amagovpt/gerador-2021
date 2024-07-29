@@ -466,14 +466,14 @@ label[for^="accstmnt_assessment_with_users"], label[for^="accstmnt_orginfo_conta
 .remove-line{
 	color: #8e0d0d;
 }
-
+/*
 .discard {
   all: initial;
   * {
     all: unset;
 	}
 }
-.discard h1, .discard h2, .discard h3 {
+	*/.discard h1, .discard h2, .discard h3 {
 	display: block;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
