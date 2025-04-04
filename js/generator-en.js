@@ -887,17 +887,16 @@
                   outHTML += "The mobile application ";
                   outHTML += document.getElementById('entity-target-app-name').value;
                 }
-                outHTML += " d";
-                outHTML += document.getElementById('entity-gender').value.toLowerCase();
-                outHTML += ' ' + document.getElementById('entity-name').value;
+                outHTML += " owned by ";
+                outHTML += document.getElementById('entity-name').value;
                 outHTML += ' is certified with the seal ';
                 outHTML += '<span class="mr mr-seal">';
-                outHTML += document.querySelector('input[name="entity-seal"]:checked').value;
+                outHTML += _getSealEN(document.querySelector('input[name="entity-seal"]:checked').value);
                 outHTML += '</span>';
                 outHTML += ' of usability and accessibility.';
                 outHTML += ' The publishing of the seal ';
-                outHTML += document.querySelector('input[name="entity-seal"]:checked').value;
-                outHTML += ' it means that ';
+                outHTML += _getSealEN(document.querySelector('input[name="entity-seal"]:checked').value);
+                outHTML += ' means that ';
                 if (document.getElementById('entity-target').value === "website") {
                   outHTML += "the website ";
                   outHTML += document.getElementById('entity-target-name').value;
@@ -1622,6 +1621,18 @@
         conditional.setAttribute('hidden', '');
       }
     });
+  }
+
+  function _getSealEN(sealPT) {
+    if (sealPT === "bronze") {
+      return "bronze";
+    }
+    if (sealPT === "prata") {
+      return "silver";
+    }
+    if (sealPT === "ouro") {
+      return "gold";
+    }
   }
 
   _init();
